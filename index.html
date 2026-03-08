@@ -1,0 +1,656 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>2026年RWA市场深度研究报告：政策破局、AI赋能与生态重构</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'serif': ['Noto Serif SC', 'serif'],
+                        'sans': ['Inter', 'sans-serif']
+                    },
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#64748b',
+                        accent: '#f59e0b',
+                        neutral: '#374151'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .toc-sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 300px;
+            height: 100vh;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-right: 1px solid #e2e8f0;
+            overflow-y: auto;
+            z-index: 1000;
+            padding: 2rem 1.5rem;
+        }
+        
+        .main-content {
+            margin-left: 300px;
+            min-height: 100vh;
+        }
+        
+        @media (max-width: 1024px) {
+            .toc-sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+            
+            .toc-sidebar.open {
+                transform: translateX(0);
+            }
+            
+            .main-content {
+                margin-left: 0;
+            }
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            min-height: 60vh;
+        }
+        
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.1;
+            font-weight: 900;
+            position: relative;
+            z-index: 2;
+            word-wrap: break-word;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            opacity: 0.9;
+            margin-top: 1.5rem;
+        }
+        
+        .hero-visual {
+            position: relative;
+            height: 400px;
+            background: linear-gradient(45deg, rgba(37, 99, 235, 0.1), rgba(245, 158, 11, 0.1));
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .content-section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #1f2937;
+        }
+        
+        .subsection-title {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem;
+            color: #374151;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border-left: 4px solid #2563eb;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .data-table th {
+            background: #f8fafc;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: #374151;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .data-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        
+        .citation {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 0.125rem 0.375rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            text-decoration: none;
+            margin: 0 0.125rem;
+            transition: background 0.2s;
+        }
+        
+        .citation:hover {
+            background: #1d4ed8;
+        }
+        
+        .mermaid-container {
+            display: flex;
+            justify-content: center;
+            min-height: 300px;
+            max-height: 800px;
+            background: #ffffff;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mermaid-container .mermaid {
+            width: 100%;
+            max-width: 100%;
+            height: 100%;
+            cursor: grab;
+            transition: transform 0.3s ease;
+            transform-origin: center center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            touch-action: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .mermaid-container .mermaid svg {
+            max-width: 100%;
+            height: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .mermaid-container .mermaid:active {
+            cursor: grabbing;
+        }
+
+        .mermaid-container.zoomed .mermaid {
+            height: 100%;
+            width: 100%;
+            cursor: grab;
+        }
+
+        .mermaid-controls {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            gap: 10px;
+            z-index: 20;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 8px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .mermaid-control-btn {
+            background: #ffffff;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            padding: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #374151;
+            font-size: 14px;
+            min-width: 36px;
+            height: 36px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mermaid-control-btn:hover {
+            background: #f8fafc;
+            border-color: #3b82f6;
+            color: #3b82f6;
+            transform: translateY(-1px);
+        }
+
+        .mermaid-control-btn:active {
+            transform: scale(0.95);
+        }
+        
+        /* Mermaid theme customization for better contrast with different node colors */
+        .mermaid .node rect,
+        .mermaid .node circle,
+        .mermaid .node ellipse,
+        .mermaid .node polygon {
+            stroke-width: 2px !important;
+            stroke: #374151 !important;
+        }
+        
+        /* Default text color for all nodes */
+        .mermaid .node text {
+            fill: #374151 !important;
+            font-weight: 500 !important;
+        }
+        
+        /* Specific styling for different node classes with colored backgrounds */
+        .mermaid .node[class*="fill-primary"] rect,
+        .mermaid .node[class*="fill-primary"] circle,
+        .mermaid .node[class*="fill-primary"] ellipse,
+        .mermaid .node[class*="fill-primary"] polygon {
+            fill: #dbeafe !important;
+            stroke: #2563eb !important;
+        }
+        
+        .mermaid .node[class*="fill-primary"] text {
+            fill: #1e40af !important;
+            font-weight: 600 !important;
+        }
+        
+        .mermaid .node[class*="fill-accent"] rect,
+        .mermaid .node[class*="fill-accent"] circle,
+        .mermaid .node[class*="fill-accent"] ellipse,
+        .mermaid .node[class*="fill-accent"] polygon {
+            fill: #fef3c7 !important;
+            stroke: #f59e0b !important;
+        }
+        
+        .mermaid .node[class*="fill-accent"] text {
+            fill: #92400e !important;
+            font-weight: 600 !important;
+        }
+        
+        .mermaid .node[class*="fill-secondary"] rect,
+        .mermaid .node[class*="fill-secondary"] circle,
+        .mermaid .node[class*="fill-secondary"] ellipse,
+        .mermaid .node[class*="fill-secondary"] polygon {
+            fill: #e2e8f0 !important;
+            stroke: #64748b !important;
+        }
+        
+        .mermaid .node[class*="fill-secondary"] text {
+            fill: #374151 !important;
+            font-weight: 600 !important;
+        }
+        
+        .mermaid .node[class*="fill-neutral"] rect,
+        .mermaid .node[class*="fill-neutral"] circle,
+        .mermaid .node[class*="fill-neutral"] ellipse,
+        .mermaid .node[class*="fill-neutral"] polygon {
+            fill: #d1d5db !important;
+            stroke: #6b7280 !important;
+        }
+        
+        .mermaid .node[class*="fill-neutral"] text {
+            fill: #1f2937 !important;
+            font-weight: 600 !important;
+        }
+        
+        /* Edge styling for better visibility */
+        .mermaid .edgePath path {
+            stroke: #64748b !important;
+            stroke-width: 2px !important;
+        }
+        
+        .mermaid .edgeLabel {
+            background-color: #ffffff !important;
+            border: 1px solid #e2e8f0 !important;
+            border-radius: 4px !important;
+            padding: 2px 6px !important;
+        }
+        
+        .mermaid .edgeLabel text {
+            fill: #374151 !important;
+            font-weight: 500 !important;
+        }
+        
+        /* Timeline specific styling with better contrast */
+        .mermaid .section0, .mermaid .section1, .mermaid .section2, .mermaid .section3 {
+            fill: #f8fafc !important;
+        }
+        
+        .mermaid .cScale0, .mermaid .cScale1, .mermaid .cScale2, .mermaid .cScale3 {
+            fill: #1e40af !important;
+        }
+        
+        @media (max-width: 1024px) {
+            .mermaid-control-btn:not(.reset-zoom) {
+                display: none;
+            }
+            .mermaid-controls {
+                top: auto;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+    </style>
+  <base target="_blank">
+</head>
+
+  <body class="bg-gray-50 font-sans text-gray-800">
+    <!-- Table of Contents Sidebar -->
+    <nav class="toc-sidebar">
+      <div class="mb-8">
+        <h2 class="text-xl font-bold text-gray-900 mb-4">目录导航</h2>
+      </div>
+
+      <ul class="space-y-2 text-sm">
+        <li>
+          <a class="block py-2 px-3 rounded hover:bg-white hover:shadow-sm transition-all text-gray-700 hover:text-primary" href="#section-1">
+            <i class="fas fa-cube w-4 mr-2"></i>1. RWA定义与市场概况
+          </a>
+          <ul class="ml-4 mt-1 space-y-1">
+            <li>
+              <a class="block py-1 px-2 rounded hover:bg-gray-100 text-gray-600 hover:text-primary" href="#section-1-1">1.1 核心概念界定</a>
+            </li>
+            <li>
+              <a class="block py-1 px-2 rounded hover:bg-gray-100 text-gray-600 hover:text-primary" href="#section-1-2">1.2 市场规模与增长</a>
+            </li>
+            <li>
+              <a class="block py-1 px-2 rounded hover:bg-gray-100 text-gray-600 hover:text-primary" href="#section-1-3">1.3 市场结构演变</a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a class="block py-2 px-3 rounded hover:bg-white hover:shadow-sm transition-all text-gray-700 hover:text-primary" href="#section-2">
+            <i class="fas fa-balance-scale w-4 mr-2"></i>2. 全球监管框架演变
+          </a>
+          <ul class="ml-4 mt-1 space-y-1">
+            <li>
+              <a class="block py-1 px-2 rounded hover:bg-gray-100 text-gray-600 hover:text-primary" href="#section-2-1">2.1 中国内地监管</a>
+            </li>
+            <li>
+              <a class="block py-1 px-2 rounded hover:bg-gray-100 text-gray-600 hover:text-primary" href="#section-2-2">2.2 中国香港政策</a>
+            </li>
+            <li>
+              <a class="block py-1 px-2 rounded hover:bg-gray-100 text-gray-600 hover:text-primary" href="#section-2-3">2.3 美国市场创新</a>
+            </li>
+            <li>
+              <a class="block py-1 px-2 rounded hover:bg-gray-100 text-gray-600 hover:text-primary" href="#section-2-4">2.4 欧洲MiCA法规</a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a class="block py-2 px-3 rounded hover:bg-white hover:shadow-sm transition-all text-gray-700 hover:text-primary" href="#section-3">
+            <i class="fas fa-robot w-4 mr-2"></i>3. AI与RWA深度融合
+          </a>
+          <ul class="ml-4 mt-1 space-y-1">
+            <li>
+              <a class="block py-1 px-2 rounded hover:bg-gray-100 text-gray-600 hover:text-primary" href="#section-3-1">3.1 核心应用场景</a>
+            </li>
+            <li>
+              <a class="block py-1 px-2 rounded hover:bg-gray-100 text-gray-600 hover:text-primary" href="#section-3-2">3.2 技术实现路径</a>
+            </li>
+            <li>
+              <a class="block py-1 px-2 rounded hover:bg-gray-100 text-gray-600 hover:text-primary" href="#section-3-3">3.3 市场潜力与创新</a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a class="block py-2 px-3 rounded hover:bg-white hover:shadow-sm transition-all text-gray-700 hover:text-primary" href="#section-4">
+            <i class="fas fa-building w-4 mr-2"></i>4. DeepStone生态赋能
+          </a>
+          <ul class="ml-4 mt-1 space-y-1">
+            <li>
+              <a class="block py-1 px-2 rounded hover:bg-gray-100 text-gray-600 hover:text-primary" href="#section-4-1">4.1 战略定位与业务</a>
+            </li>
+            <li>
+              <a class="block py-1 px-2 rounded hover:bg-gray-100 text-gray-600 hover:text-primary" href="#section-4-2">4.2 核心技术优势</a>
+            </li>
+            <li>
+              <a class="block py-1 px-2 rounded hover:bg-gray-100 text-gray-600 hover:text-primary" href="#section-4-3">4.3 标杆案例分析</a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a class="block py-2 px-3 rounded hover:bg-white hover:shadow-sm transition-all text-gray-700 hover:text-primary" href="#section-5">
+            <i class="fas fa-chart-line w-4 mr-2"></i>5. 市场展望与投资启示
+          </a>
+          <ul class="ml-4 mt-1 space-y-1">
+            <li>
+              <a class="block py-1 px-2 rounded hover:bg-gray-100 text-gray-600 hover:text-primary" href="#section-5-1">5.1 关键趋势判断</a>
+            </li>
+            <li>
+              <a class="block py-1 px-2 rounded hover:bg-gray-100 text-gray-600 hover:text-primary" href="#section-5-2">5.2 风险因素分析</a>
+            </li>
+            <li>
+              <a class="block py-1 px-2 rounded hover:bg-gray-100 text-gray-600 hover:text-primary" href="#section-5-3">5.3 战略建议</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="mt-8 pt-6 border-t border-gray-200">
+        <p class="text-xs text-gray-500 leading-relaxed">
+          本报告基于2026年第一季度监管政策与市场数据，深度分析RWA市场最新发展动态
+        </p>
+      </div>
+    </nav>
+
+    <!-- Mobile Toggle Button -->
+    <button class="lg:hidden fixed top-4 left-4 z-50 bg-primary text-white p-2 rounded-full shadow-lg" id="mobile-toggle">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="container mx-auto px-6 py-12">
+          <div class="hero-grid">
+            <div>
+              <h1 class="hero-title font-serif">
+                <span class="block italic text-blue-300">2026年RWA市场</span>
+                <span class="block">深度研究报告</span>
+              </h1>
+              <p class="hero-subtitle">
+                政策破局、AI赋能与生态重构——全球600亿美元市场的历史性转折点
+              </p>
+              <div class="flex items-center mt-8 space-x-6">
+                <div class="flex items-center space-x-2">
+                  <i class="fas fa-calendar-alt text-blue-300"></i>
+                  <span class="text-sm">2026年3月</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <i class="fas fa-chart-line text-blue-300"></i>
+                  <span class="text-sm">市场规模：600亿美元+</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-visual">
+              <img alt="区块链代币化资产抽象示意图" aspect="wide" class="w-full h-full object-cover opacity-80" color="blue" size="wallpaper" src="https://kimi-web-img.moonshot.cn/img/ask.qcloudimg.com/2449c6360e6d258180cbfded9980e03c43faec12.jpeg" style="transparent" query="区块链代币化资产抽象" referrerpolicy="no-referrer" data-modified="1" data-score="0.00"/>
+              <div class="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-amber-600/20"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Key Highlights -->
+      <section class="bg-white py-12">
+        <div class="container mx-auto px-6">
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="highlight-box">
+              <h3 class="text-lg font-semibold mb-2 text-blue-900">
+                <i class="fas fa-gavel mr-2"></i>监管突破
+              </h3>
+              <p class="text-gray-700">中国"42号文"确立跨境备案制，香港稳定币牌照落地，美国SEC推进链上证券框架，全球监管从"模糊容忍"转向"规则明晰"</p>
+            </div>
+
+            <div class="highlight-box">
+              <h3 class="text-lg font-semibold mb-2 text-blue-900">
+                <i class="fas fa-brain mr-2"></i>AI赋能
+              </h3>
+              <p class="text-gray-700">深度融合资产估值、风险定价与合规自动化，推动审批周期从数周压缩至分钟级，Figure信贷评估准确率达92%</p>
+            </div>
+
+            <div class="highlight-box">
+              <h3 class="text-lg font-semibold mb-2 text-blue-900">
+                <i class="fas fa-rocket mr-2"></i>市场爆发
+              </h3>
+              <p class="text-gray-700">市场规模预计突破600亿美元，从"代币化"迈向"流动性构建"新阶段，深石科技等亚洲基础设施商成为关键赋能者</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 1: RWA Definition and Market Overview -->
+      <section class="content-section bg-gray-50" id="section-1">
+        <div class="container mx-auto px-6">
+          <h2 class="section-title font-serif">1. RWA定义与市场概况（2026年Q1）</h2>
+
+          <div id="section-1-1">
+            <h3 class="subsection-title">1.1 RWA核心概念界定</h3>
+
+            <h4 class="text-xl font-semibold mt-6 mb-3">1.1.1 技术定义：区块链驱动的资产数字化范式</h4>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              <strong>现实世界资产代币化（Real World Asset Tokenization，简称RWA）</strong>是指运用加密技术及分布式账本或类似技术，将资产的所有权、收益权等转化为代币（通证）或者具有代币（通证）特性的其他权益、债券凭证，并进行发行和交易的活动<a class="citation" href="https://h5.ifeng.com/c/vivoArticle/v0028ew1ryMxWZzFD4o7NheoGcySJeQiz19Z40r3lwcbycY__?isNews=1&amp;showComments=0">[828]</a>。这一定义在2026年2月中国人民银行等八部委联合发布的《关于进一步防范和处置虚拟货币等相关风险的通知》（银发〔2026〕42号）中首次获得官方层面的明确界定，标志着RWA从行业实践术语正式纳入监管话语体系。
+            </p>
+
+            <p class="text-gray-700 leading-relaxed mb-4">
+              从技术架构层面分析，RWA的完整流程包含三个核心环节：<strong>现实世界资产的获取与确权、资产在链上的代币化映射、以及代币向链上用户的分发与流通</strong>
+              <a class="citation" href="https://www.panewslab.com/zh/articles/8a7a11w25425">[823]</a>。这一流程的本质在于将传统金融资产的法律权利结构通过智能合约进行程序化表达，使得资产的登记、转让、结算等环节能够在区块链网络上实现自动化执行。
+            </p>
+
+            <div class="highlight-box">
+              <h5 class="font-semibold mb-2">核心价值主张</h5>
+              <ul class="space-y-2 text-gray-700">
+                <li><strong>流动性释放效应：</strong>通过区块链的分割记账能力与全球可达性，实现24/7全天候交易与T+0即时结算</li>
+                <li><strong>交易成本降低：</strong>精简中介环节，提升运营效率，香港政府代币化绿色债券交收周期从T+5缩短至T+1</li>
+                <li><strong>投资门槛民主化：</strong>迪拜房地产RWA项目将投资门槛从数百万美元降至数百美元量级</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+          <div class="grid md:grid-cols-3 gap-8">
+            <div>
+              <h3 class="text-xl font-bold mb-4">关于本报告</h3>
+              <p class="text-gray-300 text-sm leading-relaxed">
+                本报告基于2026年第一季度最新监管政策与市场数据，深度分析RWA市场发展动态，为行业参与者提供战略参考。
+              </p>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-bold mb-4">数据来源</h3>
+              <ul class="text-gray-300 text-sm space-y-1">
+                <li>• 中国人民银行等八部委"42号文"</li>
+                <li>• 香港证监会稳定币牌照框架</li>
+                <li>• 美国SEC"Project Crypto"</li>
+                <li>• 欧盟MiCA法规实施进展</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-bold mb-4">重要声明</h3>
+              <p class="text-gray-300 text-sm leading-relaxed">
+                本报告仅供参考，不构成投资建议。投资者在做出投资决策前，应充分了解相关风险，并咨询专业顾问。
+              </p>
+            </div>
+          </div>
+
+          <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+            <p class="text-gray-400 text-sm">
+              2026 RWA市场深度研究报告 | 政策破局·AI赋能·生态重构
+            </p>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+        // Initialize Mermaid
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'base',
+            themeVariables: {
+                primaryColor: '#f8fafc',
+                primaryTextColor: '#374151',
+                primaryBorderColor: '#2563eb',
+                lineColor: '#64748b',
+                secondaryColor: '#e2e8f0',
+                tertiaryColor: '#f1f5f9',
+                background: '#ffffff',
+                mainBkg: '#f8fafc',
+                secondBkg: '#e2e8f0',
+                tertiaryBkg: '#f1f5f9',
+                fontFamily: 'Inter, sans-serif',
+                fontSize: '14px'
+            },
+            flowchart: {
+                useMaxWidth: false,
+                htmlLabels: true,
+                curve: 'basis'
+            },
+            timeline: {
+                useMaxWidth: false
+            }
+        });
+
+        // Mobile sidebar toggle
+        document.getElementById('mobile-toggle').addEventListener('click', function() {
+            const sidebar = document.querySelector('.toc-sidebar');
+            sidebar.classList.toggle('open');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body></html>
